@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球球作战</title>
+</head>
+<body>
+  <canvas id="cnv"></canvas>
+
+  <div class="ranking hidden">
+    <table>
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>姓名</th>
+          <th>积分</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="home">
+    <h1>球球作战</h1>
+    <p class="text-secondary">一个简简单单的射击游戏</p>
+    <hr>
+
+    <div class="content">
+      <div class="key">
+        <p>
+          <code>W</code> 向上移动
+        </p>
+        <p>
+          <code>S</code> 向下移动
+        </p>
+        <p>
+          <code>A</code> 向左移动
+        </p>
+        <p>
+          <code>D</code> 向右移动
+        </p>
+        <p>
+          <code>鼠标左键</code> 发射子弹
+        </p>
+      </div>
+      <div class="play hidden">
+        <input type="text" id="username-input" placeholder="名称">
+        <button id="play-button">开始游戏</button>
+      </div>
+      <div class="connect">
+        <p>连接服务器中...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="disconnect hidden">
+    <p>与服务器断开连接了</p>
+  </div>
+</body>
+</html>
