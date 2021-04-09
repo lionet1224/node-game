@@ -16,33 +16,26 @@ class Prop extends Item{
     this.type = type;
     // 持续10秒
     this.time = 10;
-
-    this.player = null;
   }
 
   add(player){
-    this.player = player;
-
     switch(this.type){
       case 'speed':
-        this.player.speed += 500;
+        player.speed += 500;
         break;
     }
   }
 
-  remove(){
+  remove(player){
     switch(this.type){
       case 'speed':
-        this.player.speed -= 500;
+        player.speed -= 500;
         break;
     }
   }
 
   update(dt){
     this.time -= dt;
-    if(this.time <= 0){
-      this.remove();
-    }
   }
 
   serializeForUpdate(){

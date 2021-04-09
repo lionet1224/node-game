@@ -29,7 +29,13 @@ class Player extends Item{
     this.y = Math.max(0, Math.min(Constants.MAP_SIZE, this.y))
 
     // 判断buff是否失效
-    this.buffs = this.buffs.filter(item => item.time > 0)
+    this.buffs = this.buffs.filter(item => {
+      if(item.time > 0){
+        return item;
+      } else {
+        item.remove(this);
+      }
+    })
     // buff的持续时间每帧都减少
     this.buffs.map(buff => buff.update(dt));
 
