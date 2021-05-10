@@ -1,3 +1,4 @@
+const xss = require("xss");
 const Constants = require("../../shared/constants");
 const Player = require("../objects/player");
 const Prop = require("../objects/prop");
@@ -119,7 +120,7 @@ class Game{
     return Object.values(this.players)
       .sort((a, b) => b.score - a.score)
       .slice(0, 10)
-      .map(item => ({ username: item.username, score: item.score }))
+      .map(item => ({ username: xss(item.username), score: item.score }))
   }
 
   joinGame(socket, username){

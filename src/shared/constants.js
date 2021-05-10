@@ -22,6 +22,7 @@ module.exports = Object.freeze({
     JOIN_GAME: 1,
     UPDATE: 2,
     INPUT: 3,
-    GAME_OVER: 4
+    GAME_OVER: 4,
+    GET_DELAY: 5
   }
 })

@@ -1,6 +1,7 @@
 const Item = require('./item')
 const Constants = require('../../shared/constants');
 const Bullet = require('./bullet');
+const xss = require('xss')
 
 class Player extends Item{
   constructor(data){
@@ -60,7 +61,7 @@ class Player extends Item{
   serializeForUpdate(){
     return {
       ...(super.serializeForUpdate()),
-      username: this.username,
+      username: xss(this.username),
       hp: this.hp,
       buffs: this.buffs.map(item => item.serializeForUpdate())
     }

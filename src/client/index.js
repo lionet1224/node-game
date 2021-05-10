@@ -1,4 +1,4 @@
-import { connect, play } from './networking'
+import { connect, play, getDelay } from './networking'
 import { $ } from './util'
 import { downloadAssets } from './asset'
 
@@ -25,10 +25,14 @@ Promise.all([
     play(val)
 
     $('.ranking').classList.remove('hidden')
+    $('.delay').classList.remove('hidden')
 
     startRendering();
     startCapturingInput();
   }
+
+  // 获取实时延迟
+  getDelay($('.delay'))
 }).catch(console.error)
 
 function gameOver(){
@@ -36,5 +40,6 @@ function gameOver(){
   stopCapturingInput();
   $('#home').classList.remove('hidden');
   $('.ranking').classList.add('hidden')
+  $('.delay').classList.add('hidden')
   alert('你GG了，重新进入游戏吧。');
 }

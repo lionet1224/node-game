@@ -11,6 +11,9 @@ class Socket{
 
     socket.on(Constants.MSG_TYPES.JOIN_GAME, this.game.joinGame.bind(this.game, socket))
     socket.on(Constants.MSG_TYPES.INPUT, this.game.handleInput.bind(this.game, socket))
+    socket.on(Constants.MSG_TYPES.GET_DELAY, () => {
+      socket.emit(Constants.MSG_TYPES.GET_DELAY);
+    })
     socket.on('disconnect', this.game.disconnect.bind(this.game, socket))
   }
 }

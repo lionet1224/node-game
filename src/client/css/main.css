@@ -131,3 +131,11 @@ button:focus {
   color: #444;
   font-size: 40px;
 }
+
+.delay{
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  color: #333;
+  font-size: 30px;
+}
